@@ -10,6 +10,10 @@ public class MyArrayList<T> implements List<T> {
     // Массив для хранения элементов списка
     private Object[] elements;
 
+    public int getSize() {
+        return size;
+    }
+
     // Текущее количество элементов в списке
     private int size;
 

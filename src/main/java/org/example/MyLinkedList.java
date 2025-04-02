@@ -8,6 +8,10 @@ public class MyLinkedList<T> implements List<T> {
     // Указатель на первый узел списка
     private Node<T> head;
 
+    public int getSize() {
+        return size;
+    }
+
     // Текущее количество элементов в списке
     private int size;
 
@@ -108,13 +112,14 @@ public class MyLinkedList<T> implements List<T> {
         size = 0;
     }
 
-    // Метод sort сортирует элементы списка
+    // Метод sort сортирует элементы списка по порядку(цифровому или алфавитному)
     @Override
     public void sort() {
         try {
             Object[] array = toArray();
             java.util.Arrays.sort((T[]) array, null);
             head = null;
+            size = 0;
             for (Object obj : array) {
                 add((T) obj);
             }
